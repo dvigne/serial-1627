@@ -135,10 +135,21 @@ float _Serial::parseFloat() {
    // TODO
 }
 
+/// @brief Returns the first valid floating point number from serial buffer
+/// Essentially the same as _Serial::parseFloat(), except it searches using the
+/// strategy defined by `lookahead`
+/// @param lookahead LookaheadMode strategy to use
+/// @return Floating point number
 float _Serial::parseFloat(LookaheadMode lookahead) {
    // TODO
 }
 
+/// @brief Returns the first valid floating point number from serial buffer
+/// Essentially the same as _Serial::parseFloat(LookaheadMode lookahead), except it searches using the
+/// strategy defined by `lookahead` and will ignore a character defined by `ignore`
+/// @param lookahead LookaheadMode strategy to use
+/// @param ignore Character to ignore
+/// @return Floating point number
 float _Serial::parseFloat(LookaheadMode lookahead, char ignore) {
    // TODO
 }

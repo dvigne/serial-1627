@@ -11,35 +11,37 @@
 #include <stdint.h>
 
 /// Frame Configurations
-void SERIAL_5N1();
-void SERIAL_6N1();
-void SERIAL_7N1();
-void SERIAL_8N1();  /// default
-void SERIAL_5N2();
-void SERIAL_6N2();
-void SERIAL_7N2();
-void SERIAL_8N2();
-void SERIAL_5E1();  /// even parity
-void SERIAL_6E1();
-void SERIAL_7E1();
-void SERIAL_8E1();
-void SERIAL_5E2();
-void SERIAL_6E2();
-void SERIAL_7E2();
-void SERIAL_8E2();
-void SERIAL_5O1();  /// odd parity
-void SERIAL_6O1();
-void SERIAL_7O1();
-void SERIAL_8O1();
-void SERIAL_5O2();
-void SERIAL_6O2();
-void SERIAL_7O2();
-void SERIAL_8O2(); 
+void SERIAL_5N1(); ///< Configure serial for 5 data bits, no parity, 1 stop bits 
+void SERIAL_6N1(); ///< Configure serial for 6 data bits, no parity, 1 stop bits
+void SERIAL_7N1(); ///< Configure serial for 7 data bits, no parity, 1 stop bits
+void SERIAL_8N1(); ///< Configure serial for 8 data bits, no parity, 1 stop bits (this is the default configuration)
+void SERIAL_5N2(); ///< Configure serial for 5 data bits, no parity, 2 stop bits
+void SERIAL_6N2(); ///< Configure serial for 6 data bits, no parity, 2 stop bits
+void SERIAL_7N2(); ///< Configure serial for 7 data bits, no parity, 2 stop bits
+void SERIAL_8N2(); ///< Configure serial for 8 data bits, no parity, 2 stop bits
+void SERIAL_5E1(); ///< Configure serial for 5 data bits, even parity, 1 stop bits
+void SERIAL_6E1(); ///< Configure serial for 6 data bits, even parity, 1 stop bits
+void SERIAL_7E1(); ///< Configure serial for 7 data bits, even parity, 1 stop bits
+void SERIAL_8E1(); ///< Configure serial for 8 data bits, even parity, 1 stop bits
+void SERIAL_5E2(); ///< Configure serial for 5 data bits, even parity, 2 stop bits
+void SERIAL_6E2(); ///< Configure serial for 6 data bits, even parity, 2 stop bits
+void SERIAL_7E2(); ///< Configure serial for 7 data bits, even parity, 2 stop bits
+void SERIAL_8E2(); ///< Configure serial for 8 data bits, even parity, 2 stop bits
+void SERIAL_5O1(); ///< Configure serial for 5 data bits, odd parity, 1 stop bits
+void SERIAL_6O1(); ///< Configure serial for 6 data bits, odd parity, 1 stop bits
+void SERIAL_7O1(); ///< Configure serial for 7 data bits, odd parity, 1 stop bits
+void SERIAL_8O1(); ///< Configure serial for 8 data bits, odd parity, 1 stop bits
+void SERIAL_5O2(); ///< Configure serial for 5 data bits, odd parity, 2 stop bits
+void SERIAL_6O2(); ///< Configure serial for 6 data bits, odd parity, 2 stop bits
+void SERIAL_7O2(); ///< Configure serial for 7 data bits, odd parity, 2 stop bits
+void SERIAL_8O2(); ///< Configure serial for 8 data bits, odd parity, 2 stop bits
 
+/// @enum LookaheadMode
+/// Lookahead mode for find and float parsing functions
 enum LookaheadMode {
-   SKIP_ALL,
-   SKIP_NONE,
-   SKIP_WHITESPACE
+   SKIP_ALL,        ///< Skip all characters
+   SKIP_NONE,       ///< Try to parse everything
+   SKIP_WHITESPACE  ///< Skip whitespace characters only
 };
 
 extern "C" void USART0_RXC_vect(void) __attribute__ ((signal));
