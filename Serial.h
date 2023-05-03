@@ -44,7 +44,11 @@ enum LookaheadMode {
    SKIP_WHITESPACE  ///< Skip whitespace characters only
 };
 
-extern "C" void USART0_RXC_vect(void) __attribute__ ((signal));
+/// @brief Prototype for USART RX event
+///
+/// This ISR is soley responsible for pushing back received bytes onto the ring-buffer
+/// where it can be read at leisure by the user in user space code
+extern "C" void USART0_RXC_vect(void) __attribute__ ((signal)); 
 
 class _Serial
 {
